@@ -1,0 +1,16 @@
+例.  設定閥值，求得僅顯示松子的二元影像，然後對結果執行bwlabel。可以透過找到最大的標記值來找到目標物的數量。
+
+clear,close all;
+
+pkg load image
+
+n = imread('pinenuts.png');
+
+cr = [0 1 0;1 1 1;0 1 0];
+
+n1 = n < 125;
+n1 = imopen(n1,cr);
+
+
+nb = bwlabel(n1);
+max(nb(:))
