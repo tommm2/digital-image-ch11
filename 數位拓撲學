@@ -1,0 +1,15 @@
+例:  設定影像閥值後，執行形態學的開啟，最後顯示的影像就是許多的斑點集合。
+
+
+clear,close all;
+
+pkg load image
+
+p = imread('pinenuts.png');
+imshow(p)
+
+p2 = ~im2bw(p,graythresh(p));
+figure,imshow(p2)
+
+p3 = imopen(p2,strel('disk',5,0));
+figure,imshow(p3)
