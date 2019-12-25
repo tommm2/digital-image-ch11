@@ -22,3 +22,19 @@ imshow(1-im);
 
 cd = disttrans(1-im,[Inf 1 Inf;1 0 Inf;Inf Inf Inf]);
 figure,imshow(mat2gray(cd));
+
+
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+clear,close all;
+pkg load image
+
+im = imread('L9_2.bmp');
+imshow(im);
+[m,n] = size(im)
+
+cd = disttrans(im,[Inf 1 Inf;1 0 Inf;Inf Inf Inf]);
+figure,imshow(mat2gray(cd));
+figure,imshow(cd>11)
